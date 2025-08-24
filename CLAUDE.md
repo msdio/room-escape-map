@@ -10,3 +10,4 @@ This project has built with following tech stacks:
 - language: typescript
 - package manager: pnpm
 - bundler: vite
+- styling : scss
