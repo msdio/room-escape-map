@@ -14,15 +14,15 @@ graph TB
     B --> C[Visit History]
     B --> D[Review System]
     B --> E[Saved Rooms]
-    
+
     C --> F[Data Layer]
     D --> F
     E --> F
-    
+
     F --> G[Local Storage]
     F --> H[Image Storage]
     F --> I[Capacitor Plugins]
-    
+
     I --> J[Camera Plugin]
     I --> K[Filesystem Plugin]
     I --> L[Haptics Plugin]
@@ -69,34 +69,39 @@ interface Review {
 
 interface SavedRoom extends EscapeRoom {
   memo: string;
-  priority: 'low' | 'medium' | 'high';
+  priority: "low" | "medium" | "high";
 }
 ```
 
 ### Component Architecture
 
 #### Navigation Components
+
 - **TabNavigation**: Bottom tab bar with Visit History, Saved Rooms, and Add New sections
 - **HeaderComponent**: Consistent header with search and filter capabilities
 
 #### Visit History Components
+
 - **VisitHistoryList**: Scrollable list of past visits with summary cards
 - **VisitCard**: Individual visit display with quick stats and thumbnail
 - **VisitDetail**: Full visit information with review display
 - **VisitForm**: Form for creating/editing visit records
 
 #### Review Components
+
 - **ReviewForm**: Comprehensive review creation with rating, text, and image upload
 - **ReviewDisplay**: Read-only review presentation with image gallery
 - **RatingComponent**: Interactive star rating system
 - **ImageGallery**: Swipeable image viewer with zoom capabilities
 
 #### Saved Rooms Components
+
 - **SavedRoomsList**: Grid/list view of saved rooms with memo previews
 - **SavedRoomCard**: Individual saved room with memo and priority indicator
 - **SavedRoomForm**: Form for adding/editing saved rooms and memos
 
 #### Shared Components
+
 - **CozyButton**: Styled button component with haptic feedback
 - **ImagePicker**: Camera/gallery selection with preview
 - **SearchFilter**: Combined search and filter interface
@@ -108,20 +113,20 @@ interface SavedRoom extends EscapeRoom {
 interface DataService {
   // Visit operations
   getVisits(): Promise<Visit[]>;
-  createVisit(visit: Omit<Visit, 'id'>): Promise<Visit>;
+  createVisit(visit: Omit<Visit, "id">): Promise<Visit>;
   updateVisit(id: string, updates: Partial<Visit>): Promise<Visit>;
   deleteVisit(id: string): Promise<void>;
-  
+
   // Review operations
-  createReview(review: Omit<Review, 'id'>): Promise<Review>;
+  createReview(review: Omit<Review, "id">): Promise<Review>;
   updateReview(id: string, updates: Partial<Review>): Promise<Review>;
-  
+
   // Saved rooms operations
   getSavedRooms(): Promise<SavedRoom[]>;
-  createSavedRoom(room: Omit<SavedRoom, 'id'>): Promise<SavedRoom>;
+  createSavedRoom(room: Omit<SavedRoom, "id">): Promise<SavedRoom>;
   updateSavedRoom(id: string, updates: Partial<SavedRoom>): Promise<SavedRoom>;
   deleteSavedRoom(id: string): Promise<void>;
-  
+
   // Image operations
   saveImage(imageData: string): Promise<string>;
   getImage(path: string): Promise<string>;
@@ -134,11 +139,13 @@ interface DataService {
 ### Storage Strategy
 
 **Structured Data**: Capacitor Preferences API for JSON serialization
+
 - Visits stored as `visits` key with array of Visit objects
 - Saved rooms stored as `savedRooms` key with array of SavedRoom objects
 - App settings stored as `appSettings` key
 
 **Image Storage**: Capacitor Filesystem API
+
 - Images stored in `DOCUMENTS/escape-room-tracker/images/` directory
 - Filename format: `{timestamp}_{uuid}.jpg`
 - Thumbnail generation for performance optimization
@@ -157,7 +164,7 @@ erDiagram
         date createdAt
         date updatedAt
     }
-    
+
     Review {
         string id PK
         string visitId FK
@@ -167,7 +174,7 @@ erDiagram
         date createdAt
         date updatedAt
     }
-    
+
     SavedRoom {
         string id PK
         string storeName
@@ -184,16 +191,19 @@ erDiagram
 ### Error Categories and Strategies
 
 1. **Storage Errors**
+
    - Graceful degradation with in-memory fallback
    - User notification with retry options
    - Automatic data recovery attempts
 
 2. **Image Handling Errors**
+
    - Camera permission handling with user guidance
    - File system errors with cleanup and retry
    - Image compression fallback for large files
 
 3. **Validation Errors**
+
    - Real-time form validation with helpful messages
    - Required field highlighting with cozy error styling
    - Data integrity checks before save operations
@@ -207,7 +217,7 @@ erDiagram
 
 ```typescript
 interface ErrorBoundaryProps {
-  fallback: React.ComponentType<{error: Error}>;
+  fallback: React.ComponentType<{ error: Error }>;
   onError?: (error: Error) => void;
 }
 
@@ -221,17 +231,20 @@ interface ToastService {
 ## Testing Strategy
 
 ### Unit Testing Approach
+
 - **Components**: React Testing Library for component behavior
 - **Services**: Mock Capacitor plugins for data operations
 - **Utilities**: Pure function testing for data transformations
 - **Hooks**: Custom hook testing with renderHook
 
 ### Integration Testing
+
 - **Data Flow**: End-to-end data operations from UI to storage
 - **Navigation**: Route transitions and state persistence
 - **Image Handling**: Camera integration and file operations
 
 ### E2E Testing Scenarios
+
 - Complete visit creation workflow
 - Review creation with image upload
 - Saved room management
@@ -239,12 +252,13 @@ interface ToastService {
 - Offline usage scenarios
 
 ### Testing Configuration
+
 ```typescript
 // Test utilities for consistent setup
 interface TestProviders {
-  DataProvider: React.FC<{children: React.ReactNode}>;
-  NavigationProvider: React.FC<{children: React.ReactNode}>;
-  ThemeProvider: React.FC<{children: React.ReactNode}>;
+  DataProvider: React.FC<{ children: React.ReactNode }>;
+  NavigationProvider: React.FC<{ children: React.ReactNode }>;
+  ThemeProvider: React.FC<{ children: React.ReactNode }>;
 }
 ```
 
@@ -253,6 +267,7 @@ interface TestProviders {
 ### Visual Design Principles
 
 **Color Palette**:
+
 - Primary: Warm amber (#F59E0B) for main actions
 - Secondary: Soft sage green (#10B981) for success states
 - Accent: Gentle coral (#F87171) for highlights
@@ -260,11 +275,13 @@ interface TestProviders {
 - Background: Cream white (#FFFBEB) for main areas
 
 **Typography**:
+
 - Headers: Inter font family, medium weight
 - Body: Inter font family, regular weight
 - Accent: Handwritten-style font for personal touches
 
 **Spacing and Layout**:
+
 - 8px base unit for consistent spacing
 - Generous padding (16-24px) for comfortable touch targets
 - Rounded corners (8-16px) for soft, friendly appearance
@@ -273,18 +290,21 @@ interface TestProviders {
 ### Interactive Elements
 
 **Buttons**:
+
 - Rounded corners with gentle gradients
 - Haptic feedback on press
 - Smooth scale animations
 - Disabled states with reduced opacity
 
 **Forms**:
+
 - Floating labels with smooth transitions
 - Soft focus states with warm accent colors
 - Inline validation with gentle error styling
 - Progress indicators for multi-step forms
 
 **Navigation**:
+
 - Bottom tab bar with icon animations
 - Smooth page transitions
 - Breadcrumb navigation for deep sections

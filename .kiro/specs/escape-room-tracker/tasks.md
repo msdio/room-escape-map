@@ -1,6 +1,11 @@
 # Implementation Plan
 
-- [ ] 1. Set up core data models and TypeScript interfaces
+- [x] 1. Set up core data models and TypeScript interfaces
+
+
+
+
+
   - Create TypeScript interfaces for Visit, Review, SavedRoom, and EscapeRoom entities
   - Define service interfaces for data operations and image handling
   - Set up utility types for form handling and API responses
