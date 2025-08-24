@@ -1,0 +1,7 @@
+{
+  "name": "room-escape-map",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
