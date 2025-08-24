@@ -161,11 +161,35 @@ The design system includes responsive utilities:
 - Touch-friendly minimum sizes (44px for interactive elements)
 - Safe area handling for modern devices
 
+## Development Commands
+
+```bash
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Run unit tests
+pnpm test.unit
+
+# Run e2e tests
+pnpm test.e2e
+
+# Lint code
+pnpm lint
+```
+
 ## Testing
 
 Run tests for the design system:
 ```bash
-pnpm run test.unit -- --run src/theme/__tests__/cozy-design.test.ts
+pnpm test.unit -- --run src/theme/__tests__/cozy-design.test.ts
+```
+
+Or run all tests:
+```bash
+pnpm test.unit -- --run
 ```
 
 ## Design Principles
