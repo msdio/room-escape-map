@@ -1,2 +1,98 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+/* Cozy Design System - Warm Color Palette */
+:root {
+  /* Primary Colors - Warm Amber */
+  --ion-color-primary: #F59E0B;
+  --ion-color-primary-rgb: 245, 158, 11;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #d8890a;
+  --ion-color-primary-tint: #f6a823;
+
+  /* Secondary Colors - Soft Sage Green */
+  --ion-color-secondary: #10B981;
+  --ion-color-secondary-rgb: 16, 185, 129;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0ea372;
+  --ion-color-secondary-tint: #28c28e;
+
+  /* Tertiary Colors - Gentle Coral */
+  --ion-color-tertiary: #F87171;
+  --ion-color-tertiary-rgb: 248, 113, 113;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #da6464;
+  --ion-color-tertiary-tint: #f97f7f;
+
+  /* Success - Enhanced Secondary */
+  --ion-color-success: #10B981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0ea372;
+  --ion-color-success-tint: #28c28e;
+
+  /* Warning - Warm Orange */
+  --ion-color-warning: #F97316;
+  --ion-color-warning-rgb: 249, 115, 22;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #db6514;
+  --ion-color-warning-tint: #fa822d;
+
+  /* Danger - Soft Red */
+  --ion-color-danger: #EF4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d23c3c;
+  --ion-color-danger-tint: #f15757;
+
+  /* Background Colors - Cream and Warm Grays */
+  --ion-background-color: #FFFBEB;
+  --ion-background-color-rgb: 255, 251, 235;
+  
+  --ion-color-step-50: #F9F7F4;
+  --ion-color-step-100: #F3F4F6;
+  --ion-color-step-150: #E5E7EB;
+  --ion-color-step-200: #D1D5DB;
+  --ion-color-step-250: #9CA3AF;
+  --ion-color-step-300: #6B7280;
+  --ion-color-step-350: #4B5563;
+  --ion-color-step-400: #374151;
+  --ion-color-step-450: #1F2937;
+  --ion-color-step-500: #111827;
+
+  /* Text Colors */
+  --ion-text-color: #374151;
+  --ion-text-color-rgb: 55, 65, 81;
+
+  /* Card and Surface Colors */
+  --ion-card-background: #ffffff;
+  --ion-item-background: #ffffff;
+
+  /* Cozy Design System Variables */
+  --cozy-border-radius-sm: 8px;
+  --cozy-border-radius-md: 12px;
+  --cozy-border-radius-lg: 16px;
+  --cozy-border-radius-xl: 20px;
+
+  --cozy-spacing-xs: 4px;
+  --cozy-spacing-sm: 8px;
+  --cozy-spacing-md: 16px;
+  --cozy-spacing-lg: 24px;
+  --cozy-spacing-xl: 32px;
+  --cozy-spacing-2xl: 48px;
+
+  --cozy-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --cozy-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --cozy-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --cozy-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --cozy-transition-fast: 150ms ease-in-out;
+  --cozy-transition-normal: 250ms ease-in-out;
+  --cozy-transition-slow: 350ms ease-in-out;
+}

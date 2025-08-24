@@ -1,0 +1,256 @@
+// Cozy Design System - SCSS Mixins
+
+// Spacing Mixins
+@mixin cozy-padding($size: 'md') {
+  @if $size == 'xs' {
+    padding: var(--cozy-spacing-xs);
+  } @else if $size == 'sm' {
+    padding: var(--cozy-spacing-sm);
+  } @else if $size == 'md' {
+    padding: var(--cozy-spacing-md);
+  } @else if $size == 'lg' {
+    padding: var(--cozy-spacing-lg);
+  } @else if $size == 'xl' {
+    padding: var(--cozy-spacing-xl);
+  } @else if $size == '2xl' {
+    padding: var(--cozy-spacing-2xl);
+  }
+}
+
+@mixin cozy-margin($size: 'md') {
+  @if $size == 'xs' {
+    margin: var(--cozy-spacing-xs);
+  } @else if $size == 'sm' {
+    margin: var(--cozy-spacing-sm);
+  } @else if $size == 'md' {
+    margin: var(--cozy-spacing-md);
+  } @else if $size == 'lg' {
+    margin: var(--cozy-spacing-lg);
+  } @else if $size == 'xl' {
+    margin: var(--cozy-spacing-xl);
+  } @else if $size == '2xl' {
+    margin: var(--cozy-spacing-2xl);
+  }
+}
+
+// Border Radius Mixins
+@mixin cozy-rounded($size: 'md') {
+  @if $size == 'sm' {
+    border-radius: var(--cozy-border-radius-sm);
+  } @else if $size == 'md' {
+    border-radius: var(--cozy-border-radius-md);
+  } @else if $size == 'lg' {
+    border-radius: var(--cozy-border-radius-lg);
+  } @else if $size == 'xl' {
+    border-radius: var(--cozy-border-radius-xl);
+  }
+}
+
+// Shadow Mixins
+@mixin cozy-shadow($size: 'md') {
+  @if $size == 'sm' {
+    box-shadow: var(--cozy-shadow-sm);
+  } @else if $size == 'md' {
+    box-shadow: var(--cozy-shadow-md);
+  } @else if $size == 'lg' {
+    box-shadow: var(--cozy-shadow-lg);
+  } @else if $size == 'xl' {
+    box-shadow: var(--cozy-shadow-xl);
+  }
+}
+
+// Transition Mixins
+@mixin cozy-transition($property: 'all', $duration: 'normal') {
+  @if $duration == 'fast' {
+    transition: #{$property} var(--cozy-transition-fast);
+  } @else if $duration == 'normal' {
+    transition: #{$property} var(--cozy-transition-normal);
+  } @else if $duration == 'slow' {
+    transition: #{$property} var(--cozy-transition-slow);
+  }
+}
+
+// Card Mixin
+@mixin cozy-card($padding: 'lg', $shadow: 'md', $radius: 'lg') {
+  background: var(--ion-card-background);
+  @include cozy-padding($padding);
+  @include cozy-shadow($shadow);
+  @include cozy-rounded($radius);
+  @include cozy-transition('box-shadow');
+  
+  &:hover {
+    @include cozy-shadow('lg');
+  }
+}
+
+// Button Base Mixin
+@mixin cozy-button-base {
+  @include cozy-padding('md');
+  @include cozy-rounded('md');
+  @include cozy-transition('all');
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; // Touch-friendly minimum
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+// Button Variants
+@mixin cozy-button-primary {
+  @include cozy-button-base;
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+  @include cozy-shadow('sm');
+  
+  &:hover:not(:disabled) {
+    background: var(--ion-color-primary-tint);
+    @include cozy-shadow('md');
+  }
+}
+
+@mixin cozy-button-secondary {
+  @include cozy-button-base;
+  background: var(--ion-color-secondary);
+  color: var(--ion-color-secondary-contrast);
+  @include cozy-shadow('sm');
+  
+  &:hover:not(:disabled) {
+    background: var(--ion-color-secondary-tint);
+    @include cozy-shadow('md');
+  }
+}
+
+@mixin cozy-button-outline {
+  @include cozy-button-base;
+  background: transparent;
+  color: var(--ion-color-primary);
+  border: 2px solid var(--ion-color-primary);
+  
+  &:hover:not(:disabled) {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+  }
+}
+
+@mixin cozy-button-ghost {
+  @include cozy-button-base;
+  background: transparent;
+  color: var(--ion-text-color);
+  
+  &:hover:not(:disabled) {
+    background: var(--ion-color-step-100);
+  }
+}
+
+// Form Element Mixins
+@mixin cozy-input {
+  @include cozy-padding('md');
+  @include cozy-rounded('md');
+  @include cozy-transition('border-color');
+  border: 2px solid var(--ion-color-step-200);
+  background: var(--ion-card-background);
+  color: var(--ion-text-color);
+  font-size: 16px; // Prevents zoom on iOS
+  
+  &:focus {
+    outline: none;
+    border-color: var(--ion-color-primary);
+    @include cozy-shadow('sm');
+  }
+  
+  &::placeholder {
+    color: var(--ion-color-step-400);
+  }
+  
+  &:disabled {
+    background: var(--ion-color-step-100);
+    color: var(--ion-color-step-400);
+    cursor: not-allowed;
+  }
+}
+
+@mixin cozy-textarea {
+  @include cozy-input;
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+// Layout Mixins
+@mixin cozy-container($max-width: '1200px') {
+  width: 100%;
+  max-width: #{$max-width};
+  margin: 0 auto;
+  @include cozy-padding('md');
+}
+
+@mixin cozy-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin cozy-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Typography Mixins
+@mixin cozy-heading($size: 'md') {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: var(--ion-text-color);
+  line-height: 1.2;
+  
+  @if $size == 'sm' {
+    font-size: 1.125rem; // 18px
+  } @else if $size == 'md' {
+    font-size: 1.5rem; // 24px
+  } @else if $size == 'lg' {
+    font-size: 2rem; // 32px
+  } @else if $size == 'xl' {
+    font-size: 2.5rem; // 40px
+  }
+}
+
+@mixin cozy-body($size: 'md') {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ion-text-color);
+  line-height: 1.5;
+  
+  @if $size == 'sm' {
+    font-size: 0.875rem; // 14px
+  } @else if $size == 'md' {
+    font-size: 1rem; // 16px
+  } @else if $size == 'lg' {
+    font-size: 1.125rem; // 18px
+  }
+}
+
+// Responsive Mixins
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

@@ -1,0 +1,422 @@
+/* Base Component Styles */
+
+/* Ionic Button Overrides */
+ion-button {
+    --border-radius: var(--cozy-border-radius-md);
+    --padding-start: var(--cozy-spacing-lg);
+    --padding-end: var(--cozy-spacing-lg);
+    --padding-top: var(--cozy-spacing-md);
+    --padding-bottom: var(--cozy-spacing-md);
+    --transition: all var(--cozy-transition-normal);
+    font-weight: 500;
+    min-height: 44px;
+}
+
+ion-button:not(.button-clear):not(.button-outline) {
+    --box-shadow: var(--cozy-shadow-sm);
+}
+
+ion-button:hover:not(.button-disabled) {
+    --box-shadow: var(--cozy-shadow-md);
+    transform: translateY(-1px);
+}
+
+ion-button.button-outline {
+    --border-width: 2px;
+    --border-style: solid;
+}
+
+/* Ionic Card Overrides */
+ion-card {
+    --background: var(--ion-card-background);
+    --border-radius: var(--cozy-border-radius-lg);
+    --box-shadow: var(--cozy-shadow-md);
+    --transition: all var(--cozy-transition-normal);
+    margin: var(--cozy-spacing-md);
+}
+
+ion-card:hover {
+    --box-shadow: var(--cozy-shadow-lg);
+    transform: translateY(-2px);
+}
+
+ion-card-header {
+    padding: var(--cozy-spacing-lg) var(--cozy-spacing-lg) var(--cozy-spacing-md);
+}
+
+ion-card-content {
+    padding: 0 var(--cozy-spacing-lg) var(--cozy-spacing-lg);
+}
+
+ion-card-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--ion-text-color);
+}
+
+ion-card-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    color: var(--ion-color-step-400);
+    margin-top: var(--cozy-spacing-xs);
+}
+
+/* Ionic Input Overrides */
+ion-input {
+    --background: var(--ion-card-background);
+    --border-radius: var(--cozy-border-radius-md);
+    --border-width: 2px;
+    --border-style: solid;
+    --border-color: var(--ion-color-step-200);
+    --padding-start: var(--cozy-spacing-md);
+    --padding-end: var(--cozy-spacing-md);
+    --padding-top: var(--cozy-spacing-md);
+    --padding-bottom: var(--cozy-spacing-md);
+    --transition: border-color var(--cozy-transition-normal);
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+}
+
+ion-input.has-focus {
+    --border-color: var(--ion-color-primary);
+    --box-shadow: var(--cozy-shadow-sm);
+}
+
+ion-input.ion-invalid.ion-touched {
+    --border-color: var(--ion-color-danger);
+}
+
+/* Ionic Textarea Overrides */
+ion-textarea {
+    --background: var(--ion-card-background);
+    --border-radius: var(--cozy-border-radius-md);
+    --border-width: 2px;
+    --border-style: solid;
+    --border-color: var(--ion-color-step-200);
+    --padding-start: var(--cozy-spacing-md);
+    --padding-end: var(--cozy-spacing-md);
+    --padding-top: var(--cozy-spacing-md);
+    --padding-bottom: var(--cozy-spacing-md);
+    --transition: border-color var(--cozy-transition-normal);
+    font-family: inherit;
+    font-size: 16px;
+}
+
+ion-textarea.has-focus {
+    --border-color: var(--ion-color-primary);
+    --box-shadow: var(--cozy-shadow-sm);
+}
+
+ion-textarea.ion-invalid.ion-touched {
+    --border-color: var(--ion-color-danger);
+}
+
+/* Ionic Item Overrides */
+ion-item {
+    --background: var(--ion-item-background);
+    --border-radius: var(--cozy-border-radius-md);
+    --padding-start: var(--cozy-spacing-md);
+    --padding-end: var(--cozy-spacing-md);
+    --min-height: 56px;
+    --transition: all var(--cozy-transition-normal);
+    margin-bottom: var(--cozy-spacing-xs);
+}
+
+ion-item:hover {
+    --background: var(--ion-color-step-50);
+}
+
+ion-item.item-interactive:active {
+    --background: var(--ion-color-step-100);
+}
+
+/* Ionic List Overrides */
+ion-list {
+    background: transparent;
+    padding: var(--cozy-spacing-md);
+}
+
+ion-list-header {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--ion-text-color);
+    padding: var(--cozy-spacing-lg) var(--cozy-spacing-md) var(--cozy-spacing-sm);
+}
+
+/* Ionic Tab Bar Overrides */
+ion-tab-bar {
+    --background: var(--ion-card-background);
+    --border: 1px solid var(--ion-color-step-150);
+    border-radius: var(--cozy-border-radius-lg) var(--cozy-border-radius-lg) 0 0;
+    box-shadow: var(--cozy-shadow-lg);
+}
+
+ion-tab-button {
+    --color: var(--ion-color-step-400);
+    --color-selected: var(--ion-color-primary);
+    --transition: all var(--cozy-transition-normal);
+}
+
+ion-tab-button:hover {
+    --color: var(--ion-color-primary-tint);
+}
+
+/* Ionic Header Overrides */
+ion-header {
+    box-shadow: var(--cozy-shadow-sm);
+}
+
+ion-toolbar {
+    --background: var(--ion-card-background);
+    --border-width: 0;
+    --padding-start: var(--cozy-spacing-md);
+    --padding-end: var(--cozy-spacing-md);
+}
+
+ion-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: var(--ion-text-color);
+}
+
+/* Ionic Content Overrides */
+ion-content {
+    --background: var(--ion-background-color);
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+}
+
+/* Ionic Modal Overrides */
+ion-modal {
+    --border-radius: var(--cozy-border-radius-xl) var(--cozy-border-radius-xl) 0 0;
+    --box-shadow: var(--cozy-shadow-xl);
+}
+
+/* Ionic Popover Overrides */
+ion-popover {
+    --border-radius: var(--cozy-border-radius-lg);
+    --box-shadow: var(--cozy-shadow-xl);
+}
+
+/* Ionic Toast Overrides */
+ion-toast {
+    --border-radius: var(--cozy-border-radius-md);
+    --box-shadow: var(--cozy-shadow-lg);
+}
+
+/* Ionic Alert Overrides */
+ion-alert {
+    --border-radius: var(--cozy-border-radius-lg);
+    --box-shadow: var(--cozy-shadow-xl);
+}
+
+/* Ionic Action Sheet Overrides */
+ion-action-sheet {
+    --border-radius: var(--cozy-border-radius-xl) var(--cozy-border-radius-xl) 0 0;
+    --box-shadow: var(--cozy-shadow-xl);
+}
+
+/* Custom Utility Classes */
+.cozy-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--cozy-spacing-md);
+}
+
+.cozy-card {
+    background: var(--ion-card-background);
+    border-radius: var(--cozy-border-radius-lg);
+    box-shadow: var(--cozy-shadow-md);
+    padding: var(--cozy-spacing-lg);
+    transition: all var(--cozy-transition-normal);
+}
+
+.cozy-card:hover {
+    box-shadow: var(--cozy-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.cozy-button-primary {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border: none;
+    border-radius: var(--cozy-border-radius-md);
+    padding: var(--cozy-spacing-md) var(--cozy-spacing-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--cozy-transition-normal);
+    box-shadow: var(--cozy-shadow-sm);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cozy-button-primary:hover:not(:disabled) {
+    background: var(--ion-color-primary-tint);
+    box-shadow: var(--cozy-shadow-md);
+    transform: translateY(-1px);
+}
+
+.cozy-button-primary:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.cozy-button-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.cozy-input {
+    background: var(--ion-card-background);
+    border: 2px solid var(--ion-color-step-200);
+    border-radius: var(--cozy-border-radius-md);
+    padding: var(--cozy-spacing-md);
+    color: var(--ion-text-color);
+    font-size: 16px;
+    transition: border-color var(--cozy-transition-normal);
+    width: 100%;
+}
+
+.cozy-input:focus {
+    outline: none;
+    border-color: var(--ion-color-primary);
+    box-shadow: var(--cozy-shadow-sm);
+}
+
+.cozy-input::placeholder {
+    color: var(--ion-color-step-400);
+}
+
+.cozy-input:disabled {
+    background: var(--ion-color-step-100);
+    color: var(--ion-color-step-400);
+    cursor: not-allowed;
+}
+
+/* Typography Classes */
+.cozy-heading-xl {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--ion-text-color);
+}
+
+.cozy-heading-lg {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--ion-text-color);
+}
+
+.cozy-heading-md {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--ion-text-color);
+}
+
+.cozy-heading-sm {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: var(--ion-text-color);
+}
+
+.cozy-body-lg {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--ion-text-color);
+}
+
+.cozy-body-md {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--ion-text-color);
+}
+
+.cozy-body-sm {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--ion-text-color);
+}
+
+/* Spacing Utility Classes */
+.cozy-p-xs {
+    padding: var(--cozy-spacing-xs);
+}
+
+.cozy-p-sm {
+    padding: var(--cozy-spacing-sm);
+}
+
+.cozy-p-md {
+    padding: var(--cozy-spacing-md);
+}
+
+.cozy-p-lg {
+    padding: var(--cozy-spacing-lg);
+}
+
+.cozy-p-xl {
+    padding: var(--cozy-spacing-xl);
+}
+
+.cozy-p-2xl {
+    padding: var(--cozy-spacing-2xl);
+}
+
+.cozy-m-xs {
+    margin: var(--cozy-spacing-xs);
+}
+
+.cozy-m-sm {
+    margin: var(--cozy-spacing-sm);
+}
+
+.cozy-m-md {
+    margin: var(--cozy-spacing-md);
+}
+
+.cozy-m-lg {
+    margin: var(--cozy-spacing-lg);
+}
+
+.cozy-m-xl {
+    margin: var(--cozy-spacing-xl);
+}
+
+.cozy-m-2xl {
+    margin: var(--cozy-spacing-2xl);
+}
+
+/* Responsive Utilities */
+@media (max-width: 767px) {
+    .cozy-container {
+        padding: var(--cozy-spacing-sm);
+    }
+
+    .cozy-card {
+        margin: var(--cozy-spacing-sm);
+        padding: var(--cozy-spacing-md);
+    }
+}
+
+@media (min-width: 768px) {
+    .cozy-container {
+        padding: var(--cozy-spacing-lg);
+    }
+}
