@@ -36,7 +36,7 @@ export class ValidationService {
       errors.push({ field: 'visitDate', message: 'Visit date cannot be in the future' });
     }
 
-    if (visit.cleared === undefined || visit.cleared === null) {
+    if (visit.cleared === null) {
       errors.push({ field: 'cleared', message: 'Completion status is required' });
     }
 
@@ -53,7 +53,7 @@ export class ValidationService {
       errors.push({ field: 'visitId', message: 'Visit ID is required' });
     }
 
-    if (review.rating === undefined || review.rating === null) {
+    if (!review.rating) {
       errors.push({ field: 'rating', message: 'Rating is required' });
     } else if (review.rating < 1 || review.rating > 5) {
       errors.push({ field: 'rating', message: 'Rating must be between 1 and 5' });
